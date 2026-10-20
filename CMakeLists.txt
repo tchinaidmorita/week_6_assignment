@@ -1,5 +1,13 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.5.0)
 project(sample VERSION 0.1.0)
+
+# The bundled third-party submodules (glfw, glm, assimp, glew) still declare
+# cmake_minimum_required() values below 3.5, which CMake 4.0+ rejects outright.
+# Until those submodules are bumped, tell CMake to treat their old minimums as 3.5.
+if(NOT DEFINED CMAKE_POLICY_VERSION_MINIMUM)
+    set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+endif()
+
 
 set(OpenGL_GL_PREFERENCE "GLVND")
 find_package(OpenGL REQUIRED)
