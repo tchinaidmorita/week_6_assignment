@@ -24,7 +24,7 @@ void Plane::init()
     m_program = wolf::LoadShaders("data/wave.vsh", "data/wave.fsh");
 
     // Subdivision s gives 2^s quads per side, so s = 5 -> 32x32 quads (2048 triangles).
-    // Chosen to meet the "at least 32x32" requirement.
+    // Chosen to meet the "at least 5 subdivisions - 32x32 quads" requirement.
     int numQuadsAxis = 1 << m_subdivisions; 
     int numVerticesPerAxis = numQuadsAxis + 1;
 
