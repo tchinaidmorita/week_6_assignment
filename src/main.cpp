@@ -6,15 +6,14 @@
 #include "sampleClipSpaceAsColor.h"
 #include "sampleColorBlendOverTime.h"
 #include "sampleVertexAnimation.h"
+#include "SamplePlane.h"
 
 class Week2: public wolf::App
 {
 public:
     Week2() : App("Week 6")
     {
-        m_sampleRunner.addSample(new ClipSpaceAsColor(this));
-        m_sampleRunner.addSample(new ColorBlendOverTime(this));
-        m_sampleRunner.addSample(new VertexAnimation(this));
+        m_sampleRunner.addSample(new SamplePlane(this));
     }
 
     ~Week2()
